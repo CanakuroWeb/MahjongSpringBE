@@ -82,3 +82,7 @@ SELECT * FROM tb_game_result WHERE game_id = ( SELECT game_id FROM tb_game WHERE
 -- 마작내에서 3 or 4 위를 가장 많이 한 사람을 찾으라.
 -- 2중 join
 SELECT user_id,COUNT(user_rank) FROM tb_game_result WHERE user_rank=3 OR user_rank=4 GROUP BY user_id ORDER BY COUNT(user_rank) LIMIT 1;
+-- WHERE user_rank=3 OR user_rank=4 : FILTERING> 여기에 기간도, 모든것도 추가할 수 있겠죠!
+-- GROUP BY user_id : user_id로 묶기!/COUNT(user_rank) 가 횟수가 됨 (가중치가 없다...)
+-- ORDER BY COUNT(user_rank) : 횟수로 정렬
+-- LIMIT 1 : 단 한명
