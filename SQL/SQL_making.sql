@@ -74,7 +74,7 @@ COMMIT;
 -- 개인 연습용
 
 -- tb_game의 guild_id가 19000 에서 등록된 모든 게임의 "결과"를 tb_game_result에서 불러오라.
-SELECT B.* FROM tb_game AS A LEFT JOIN tb_game_result AS B ON A.game_id = B.game_id WHERE A.guild_id = 19000; -- 이러면 tb_game_result만 가져오게 될 것
+SELECT B.* FROM tb_game AS A INNER JOIN tb_game_result AS B ON A.game_id = B.game_id WHERE A.guild_id = 19000; -- 이러면 tb_game_result만 가져오게 될 것
 -- OUTER 은 '조건에 부합하지 않아도' 붙힌다는점을 명심하자. 헷갈렸다. 
 -- PS. Bad Example by Sub-query
 SELECT * FROM tb_game_result WHERE game_id = ( SELECT game_id FROM tb_game WHERE guild_id = 19000 ) ;
